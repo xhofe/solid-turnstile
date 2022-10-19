@@ -61,6 +61,9 @@ export default function Turnstile(
 
   createEffect((prev: (() => void) | undefined) => {
     prev?.();
+    Object.keys(local).forEach((key) => {
+      local[key as keyof typeof local];
+    });
     if (!ref) return;
     let cancelled = false;
     let widgetId = "";
