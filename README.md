@@ -1,10 +1,10 @@
 <p>
-  <img width="100%" src="https://assets.solidjs.com/banner?project=solid-turnstile" alt="solid-named-router">
+  <img width="100%" src="https://assets.solidjs.com/banner?project=solid-turnstile" alt="solid-turnstile">
 </p>
 
 # solid-turnstile
 
-☘ A solidjs component of progress bar, the custom colors are supported. Inspired by [vue3-progress](https://github.com/tangyouge/vue3-progress) but for [Solidjs](https://solidjs.com).
+🔐 A very simple React library for [Cloudflare Turnstile](https://challenges.cloudflare.com). Inspired by [react-turnstile](https://www.npmjs.com/package/react-turnstile)
 
 [![release](https://github.com/Xhofe/solid-turnstile/actions/workflows/release.yml/badge.svg)](https://github.com/Xhofe/solid-turnstile/actions/workflows/release.yml)
 [![npm](https://img.shields.io/npm/dm/solid-turnstile.svg)](https://www.npmjs.com/package/solid-turnstile)
@@ -25,15 +25,46 @@ pnpm add solid-turnstile
 ## Usage
 
 ```tsx
-import { Component } from "solid-turnstile";
+import Turnstile from "react-turnstile";
 
-const App = () => {
-  const [shown, setShown] = createSignal(true);
+function TurnstileWidget() {
   return (
-    <div>
-      <Component />
-    </div>
+    <Turnstile
+      sitekey="1x00000000000000000000AA"
+      onVerify={(token) => alert(token)}
+    />
   );
-};
-export default App;
+}
 ```
+
+## Documentation
+
+Turnstile takes the following arguments:
+
+| name              | type    | description                                   |
+| ----------------- | ------- | --------------------------------------------- |
+| sitekey           | string  | sitekey of your website (REQUIRED)            |
+| action            | string  | -                                             |
+| cData             | string  | -                                             |
+| theme             | string  | one of "light", "dark", "auto"                |
+| tabIndex          | number  | -                                             |
+| responseField     | boolean | controls generation of `<input />` element \* |
+| responseFieldName | string  | changes the name of `<input />` element \*    |
+| id                | string  | id of the div                                 |
+| className         | string  | passed to the div                             |
+| style             | object  | passed to the div                             |
+
+And the following callbacks:
+
+| name     | arguments | description                                |
+| -------- | --------- | ------------------------------------------ |
+| onVerify | token     | called when challenge is passed (REQUIRED) |
+| onLoad   | -         | called when the widget is loaded           |
+| onError  | error     | called when an error occurs                |
+| onExpire | -         | called when the challenge expires \*\*     |
+
+\* responseField and responseFieldName are experimental and not yet documented.
+
+\*\* `onExpire` is called when the Turnstile challenge expires without creating a token.
+
+For more details on what each argument does, see the [Cloudflare Documentation](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/#configurations).
