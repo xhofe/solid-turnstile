@@ -4,7 +4,7 @@
 
 # solid-turnstile
 
-🔐 A very simple React library for [Cloudflare Turnstile](https://challenges.cloudflare.com). Inspired by [react-turnstile](https://www.npmjs.com/package/react-turnstile)
+🔐 A very simple Solid library for [Cloudflare Turnstile](https://challenges.cloudflare.com). Inspired by [react-turnstile](https://www.npmjs.com/package/react-turnstile)
 
 [![release](https://github.com/Xhofe/solid-turnstile/actions/workflows/release.yml/badge.svg)](https://github.com/Xhofe/solid-turnstile/actions/workflows/release.yml)
 [![npm](https://img.shields.io/npm/dm/solid-turnstile.svg)](https://www.npmjs.com/package/solid-turnstile)
@@ -50,9 +50,8 @@ Turnstile takes the following arguments:
 | tabIndex          | number  | -                                             |
 | responseField     | boolean | controls generation of `<input />` element \* |
 | responseFieldName | string  | changes the name of `<input />` element \*    |
-| id                | string  | id of the div                                 |
-| className         | string  | passed to the div                             |
-| style             | object  | passed to the div                             |
+
+Add others props to `<div />` element.
 
 And the following callbacks:
 

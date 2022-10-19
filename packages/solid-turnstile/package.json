@@ -1,7 +1,7 @@
 {
   "name": "solid-turnstile",
   "version": "0.0.0",
-  "description": "",
+  "description": "🔐 A very simple Solid library for Cloudflare Turnstile. Inspired by react-turnstile",
   "keywords": [
     "solidjs",
     "turnstile",
