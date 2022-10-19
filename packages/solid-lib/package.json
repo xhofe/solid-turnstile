@@ -2,16 +2,34 @@
   "name": "solid-turnstile",
   "version": "0.0.0",
   "description": "",
+  "keywords": [
+    "solidjs",
+    "turnstile",
+    "cf-turnstile",
+    "validation"
+  ],
+  "author": {
+    "name": "Noah Hsu",
+    "email": "i@nn.ci",
+    "url": "https://i.nn.ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xhofe/solid-turnstile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xhofe/solid-turnstile/issues"
+  },
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/solid-turnstile.umd.cjs",
+  "main": "./dist/solid-turnstile.cjs",
   "module": "./dist/solid-turnstile.js",
   "exports": {
     ".": {
       "import": "./dist/solid-turnstile.js",
-      "require": "./dist/solid-turnstile.umd.cjs"
+      "require": "./dist/solid-turnstile.cjs"
     }
   },
   "types": "./dist/index.d.ts",
