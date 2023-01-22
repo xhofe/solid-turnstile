@@ -25,7 +25,7 @@ pnpm add solid-turnstile
 ## Usage
 
 ```tsx
-import Turnstile from "react-turnstile";
+import Turnstile from "solid-turnstile";
 
 function TurnstileWidget() {
   return (
